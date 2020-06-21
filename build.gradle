@@ -1,0 +1,42 @@
+plugins {
+    id 'groovy'
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.17'
+}
+
+group 'reviewking72'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+
+    // for algs library utilities
+    implementation 'edu.princeton.cs:algs4:1.0.2'
+
+    // for logback with slf4
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    testImplementation 'junit:junit:4.12'
+
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.2.4'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
